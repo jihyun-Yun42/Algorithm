@@ -1,6 +1,5 @@
+
 function solution(absolutes, signs) {
-  for(let i = 0; i < signs.length; i++) {
-    if (signs[i] == false) absolutes[i] = -absolutes[i]
-  }
-  return absolutes.reduce((a, b) => a + b)
+    signs.forEach((sig, i) => sig === false ? absolutes[i] = -absolutes[i] : absolutes[i] = absolutes[i])
+    return absolutes.reduce((a, b) => a+b)
 }
