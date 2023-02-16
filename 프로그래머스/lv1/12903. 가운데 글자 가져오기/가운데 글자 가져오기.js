@@ -1,8 +1,5 @@
 function solution(s) {
-    let a = s.length % 2
-    if (a == 0) {
-        return s[s.length / 2 - 1] + s[s.length / 2]
-    } else {
-        return s[Math.floor(s.length / 2)]
-    }
+    // Array.from(s)
+    // console.log(Array.from(s)[s.length / 2])
+    return Number.isInteger(s.length / 2) ? s[s.length / 2 -1] + s[s.length / 2] : s[Math.floor(s.length / 2)]
 }
