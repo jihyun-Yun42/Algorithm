@@ -1,3 +1,3 @@
 function solution(n) {
-    return String(n).split('').reduce((pre, cur) => (pre += Number(cur)), 0)
+    return Array.from(String(n)).reduce((acc, cur) => acc + Number(cur), 0)
 }
