@@ -4,7 +4,6 @@ function solution(s) {
         const newStr = s
         const frontStr = newStr.substr(0, i)
         const newString = newStr.substring(i, newStr.length) + frontStr
-        
         const stackArr = []
         
         for(let str of newString) {
