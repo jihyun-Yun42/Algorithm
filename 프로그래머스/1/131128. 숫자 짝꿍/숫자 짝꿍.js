@@ -11,11 +11,9 @@ function solution(X, Y) {
     }
     if(answer[0] === '0') {
         return '0'
-    }
-    else if(answer.length === 0) {
+    } else if(answer.length === 0) {
         return '-1'
-    }
-    else {
+    } else {
         return answer
     }
 }
