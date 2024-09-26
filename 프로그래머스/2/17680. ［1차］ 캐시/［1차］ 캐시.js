@@ -1,23 +1,23 @@
 function solution(cacheSize, cities) {
-    const city = cities.map(a => a.toLowerCase());
+    let answer = 0;
     
-    let queue = []
-    let time = 0
+    const cache = []
     
-    for(let i = 0; i < city.length; i++){
-        if(!queue.includes(city[i])){ 
-            time+=5
-            queue.push(city[i])
-            if(queue.length > cacheSize){ 
-                queue.shift()
+    for(let i = 0; i < cities.length; i++) {
+        const cite = cities[i].toLowerCase()
+        const index = cache.indexOf(cite)
+        if(index >= 0) {
+            cache.splice(index, 1)
+            cache.unshift(cite)
+            answer++
+        } else {
+            cache.unshift(cite)
+            
+            if(cache.length > cacheSize) {                
+                cache.pop()
             }
-        }
-        else{ 
-            time++
-            let idx = queue.indexOf(city[i])
-            queue.splice(idx, 1)
-            queue.push(city[i])
+            answer = answer + 5
         }
     }
-    return time
+    return answer
 }
