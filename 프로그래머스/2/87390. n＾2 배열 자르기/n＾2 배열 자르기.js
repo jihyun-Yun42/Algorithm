@@ -1,6 +1,10 @@
 function solution(n, left, right) {
-    var answer = [];
-    for(var i=left; i<=right; i++)
-        answer.push(Math.max(Number.parseInt(i / n), i % n) + 1);
-    return answer;
+    const answer = []
+    
+    for(let i = left; i <= right; i++) {
+        const line = parseInt(i / n) + 1
+        const row = i % n + 1
+        answer.push(Math.max(line, row))
+    }
+    return answer
 }
