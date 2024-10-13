@@ -1,17 +1,16 @@
 function solution(ingredient) {
-    let count = 0;
-    let arr = []
-    for(let i = 0; i < ingredient.length; i++) {
-        arr.push(ingredient[i])
-        
-        if(arr.at(-4) === 1
-            && arr.at(-3) === 2
-            && arr.at(-2) === 3
-            && arr.at(-1) === 1) {
-            arr.splice(arr.length -4, 4)
-            count++
+    let answer = 0;
+    let stack = [];
+    
+    ingredient.forEach((food, i) => {
+        stack.push(food);
+        if(stack.length >= 4 && food === 1) {
+            let bugger = stack.slice(stack.length-4, stack.length).join('')
+            if(bugger === '1231') {
+                stack.splice(stack.length-4, stack.length);
+                answer++;
+            }
         }
-    }
-
-    return count;
+    });
+    return answer;
 }
